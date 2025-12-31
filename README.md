@@ -155,3 +155,5 @@ All models run locally using PyTorch
 Large files (datasets, weights) are not committed
 
 This repository is provided for reproducibility and evaluation purposes only
+
+### !!! Nhóm em sửa dụng Zalo để trao đổi và gửi file code nên không push code lên github trong thời gian cuộc thi
