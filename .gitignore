@@ -1,5 +1,5 @@
 dataset/
 public_test/
-*.Zone.Identifier
+*:Zone.Identifier
 __MACOSX/
 *.DS_Store
