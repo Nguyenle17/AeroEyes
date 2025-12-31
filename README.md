@@ -26,7 +26,7 @@ This is a **spatio-temporal localization** problem evaluated using the **Spatio�
 ---
 
 ## 2. Repository Structure
-
+```
 aeroeyes/
 ├── README.md
 ├── requirements.txt
@@ -49,7 +49,7 @@ aeroeyes/
 
 
 ---
-
+```
 ## 3. Environment Setup
 
 ### 3.1 Python Version
@@ -71,6 +71,7 @@ venv\Scripts\activate           # Windows
 ## 4. Dataset Preparation
 
 ### 4.1 Dataset Structure
+```
 dataset/
 ├── samples/
 │   ├── drone_video_001/
@@ -82,31 +83,34 @@ dataset/
 │   └── ...
 └── annotations/
     └── annotations.json
+```
 
 ### 4.2 Extract Frames from Videos
+```
 python scripts/extract_frames.py \
   --video_root dataset/samples \
   --save_root frames/
+```
 
 ## 5. YOLO Dataset Preparation
 
 - Convert annotations to YOLO format and split into train/validation sets:
-
+```
 python scripts/prepare_yolo_dataset.py \
   --annotation_path dataset/annotations/annotations.json \
   --dataset_frames frames/ \
   --save_path yolo_dataset/
-
+```
 ## 6. YOLO Training (Optional)
 
 - Fine-tune YOLO on the prepared dataset:
-
+```
 yolo detect train \
   data=yolo_dataset.yaml \
   model=yolov8n.pt \
   epochs=50 \
   imgsz=640
-
+```
 
 The trained model should be saved under:
 
@@ -123,16 +127,16 @@ DeepSORT tracking
 ResNet50 embedding
 
 Cosine similarity matching
-
+```
 python scripts/inference.py \
   --frames_root frames/ \
   --weights weights/yolo.pt \
   --output results/predictions.json
-
+```
 ## 8. Output Format
 
 The prediction file follows the official AeroEyes submission format:
-
+```
 [
   {
     "video_id": "drone_video_001",
@@ -145,7 +149,7 @@ The prediction file follows the official AeroEyes submission format:
     ]
   }
 ]
-
+```
 ## 9. Notes
 
 External connectivity (cloud inference) is not used
