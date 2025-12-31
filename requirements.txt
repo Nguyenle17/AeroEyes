@@ -1,0 +1,19 @@
+# Core
+numpy
+opencv-python
+Pillow
+tqdm
+
+# Deep Learning
+torch>=1.13
+torchvision>=0.14
+ultralytics>=8.0.0
+
+# Tracking
+deep-sort-realtime
+
+# Data handling
+scikit-learn
+
+# Utilities
+matplotlib
